@@ -1,4 +1,4 @@
-from monkey.token.token import Token, Tokens, lookup_ident
+from monkey.tokens.tokens import Token, Tokens, lookup_ident
 
 
 def is_letter(char):
