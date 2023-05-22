@@ -1,5 +1,5 @@
 import pytest
-from monkey.token.token import Tokens, Token
+from monkey.tokens.tokens import Tokens, Token
 
 from monkey.lexer.lexer import Lexer
 
