@@ -40,3 +40,10 @@ class Tokens(TokenType, Enum):
     # // Keywords
     FUNCTION = "FUNCTION"
     LET = "LET"
+
+
+KEYWORDS = {"fn": Tokens.FUNCTION, "let": Tokens.LET}
+
+
+def lookup_ident(ident: str) -> TokenType:
+    return KEYWORDS.get(ident, Tokens.IDENT)
