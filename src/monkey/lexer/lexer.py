@@ -2,9 +2,7 @@ from monkey.tokens.tokens import Token, Tokens, lookup_ident
 
 
 def is_letter(char):
-    return isinstance(char, str) and (
-        "a" <= char <= "z" or "A" <= char <= "Z" or char == "_"
-    )
+    return isinstance(char, str) and ("a" <= char <= "z" or "A" <= char <= "Z" or char == "_")
 
 
 def is_digit(char):
