@@ -1,5 +1,5 @@
 from dataclasses import dataclass
-from enum import StrEnum
+from enum import Enum
 
 TokenType = str
 
@@ -9,8 +9,14 @@ class Token:
     type: TokenType
     literal: str
 
+    def __eq__(self, other) -> bool:
+        if isinstance(other, Token):
+            if self.type == other.type and self.literal == other.literal:
+                return True
+        return False
 
-class Tokens(StrEnum):
+
+class Tokens(TokenType, Enum):
     ILLEGAL = "ILLEGAL"
     EOF = "EOF"
 
