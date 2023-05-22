@@ -63,6 +63,18 @@ class Lexer:
                 tok = Token(type=Tokens.ASSIGN, literal=self.char)
             case "+":
                 tok = Token(type=Tokens.PLUS, literal=self.char)
+            case "-":
+                tok = Token(type=Tokens.MINUS, literal=self.char)
+            case "!":
+                tok = Token(type=Tokens.BANG, literal=self.char)
+            case "/":
+                tok = Token(type=Tokens.SLASH, literal=self.char)
+            case "*":
+                tok = Token(type=Tokens.ASTERISK, literal=self.char)
+            case "<":
+                tok = Token(type=Tokens.LT, literal=self.char)
+            case ">":
+                tok = Token(type=Tokens.GT, literal=self.char)
             case "(":
                 tok = Token(type=Tokens.LPAREN, literal=self.char)
             case ")":

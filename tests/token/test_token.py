@@ -68,6 +68,60 @@ let result = add(five, ten);""",
                 Token(Tokens.SEMICOLON, ";"),
             ],
         ),
+        (
+            """let five = 5;
+let ten = 10;
+
+let add = fn(x, y) {
+  x + y;
+};
+
+let result = add(five, ten);
+!-/*5""",
+            [
+                Token(Tokens.LET, "let"),
+                Token(Tokens.IDENT, "five"),
+                Token(Tokens.ASSIGN, "="),
+                Token(Tokens.INT, "5"),
+                Token(Tokens.SEMICOLON, ";"),
+                Token(Tokens.LET, "let"),
+                Token(Tokens.IDENT, "ten"),
+                Token(Tokens.ASSIGN, "="),
+                Token(Tokens.INT, "10"),
+                Token(Tokens.SEMICOLON, ";"),
+                Token(Tokens.LET, "let"),
+                Token(Tokens.IDENT, "add"),
+                Token(Tokens.ASSIGN, "="),
+                Token(Tokens.FUNCTION, "fn"),
+                Token(Tokens.LPAREN, "("),
+                Token(Tokens.IDENT, "x"),
+                Token(Tokens.COMMA, ","),
+                Token(Tokens.IDENT, "y"),
+                Token(Tokens.RPAREN, ")"),
+                Token(Tokens.LBRACE, "{"),
+                Token(Tokens.IDENT, "x"),
+                Token(Tokens.PLUS, "+"),
+                Token(Tokens.IDENT, "y"),
+                Token(Tokens.SEMICOLON, ";"),
+                Token(Tokens.RBRACE, "}"),
+                Token(Tokens.SEMICOLON, ";"),
+                Token(Tokens.LET, "let"),
+                Token(Tokens.IDENT, "result"),
+                Token(Tokens.ASSIGN, "="),
+                Token(Tokens.IDENT, "add"),
+                Token(Tokens.LPAREN, "("),
+                Token(Tokens.IDENT, "five"),
+                Token(Tokens.COMMA, ","),
+                Token(Tokens.IDENT, "ten"),
+                Token(Tokens.RPAREN, ")"),
+                Token(Tokens.SEMICOLON, ";"),
+                Token(Tokens.BANG, "!"),
+                Token(Tokens.MINUS, "-"),
+                Token(Tokens.SLASH, "/"),
+                Token(Tokens.ASTERISK, "*"),
+                Token(Tokens.INT, "5"),
+            ],
+        ),
     ],
 )
 def test_next_token(input, expected_tokens):
