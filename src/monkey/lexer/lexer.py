@@ -53,6 +53,12 @@ class Lexer:
         while self.char in [" ", "\t", "\n", "\r"]:
             self._read_char()
 
+    def _peek_char(self):
+        if self.read_position >= len(self.input):
+            return None
+        else:
+            return self.input[self.read_position]
+
     def next_token(self):
         tok: Token
 
@@ -60,13 +66,23 @@ class Lexer:
 
         match self.char:
             case "=":
-                tok = Token(type=Tokens.ASSIGN, literal=self.char)
+                if self._peek_char() == "=":
+                    first_char = self.char
+                    self._read_char()
+                    tok = Token(type=Tokens.EQ, literal=first_char + self.char)
+                else:
+                    tok = Token(type=Tokens.ASSIGN, literal=self.char)
             case "+":
                 tok = Token(type=Tokens.PLUS, literal=self.char)
             case "-":
                 tok = Token(type=Tokens.MINUS, literal=self.char)
             case "!":
-                tok = Token(type=Tokens.BANG, literal=self.char)
+                if self._peek_char() == "=":
+                    first_char = self.char
+                    self._read_char()
+                    tok = Token(type=Tokens.NOT_EQ, literal=first_char + self.char)
+                else:
+                    tok = Token(type=Tokens.BANG, literal=self.char)
             case "/":
                 tok = Token(type=Tokens.SLASH, literal=self.char)
             case "*":

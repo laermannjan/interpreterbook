@@ -23,7 +23,10 @@ if (5 < 10) {
     return true;
 } else {
     return false;
-}""",
+}
+
+10 == 10;
+10 != 9;""",
             [
                 Token(Tokens.LET, "let"),
                 Token(Tokens.IDENT, "five"),
@@ -90,15 +93,15 @@ if (5 < 10) {
                 Token(Tokens.FALSE, "false"),
                 Token(Tokens.SEMICOLON, ";"),
                 Token(Tokens.RBRACE, "}"),
-                # Token(Tokens.INT, "10"),
-                # Token(Tokens.EQ, "=="),
-                # Token(Tokens.INT, "10"),
-                # Token(Tokens.SEMICOLON, ";"),
-                # Token(Tokens.INT, "10"),
-                # Token(Tokens.NOT_EQ, "!="),
-                # Token(Tokens.INT, "9"),
-                # Token(Tokens.SEMICOLON, ";"),
-                # Token(Tokens.EOF, ""),
+                Token(Tokens.INT, "10"),
+                Token(Tokens.EQ, "=="),
+                Token(Tokens.INT, "10"),
+                Token(Tokens.SEMICOLON, ";"),
+                Token(Tokens.INT, "10"),
+                Token(Tokens.NOT_EQ, "!="),
+                Token(Tokens.INT, "9"),
+                Token(Tokens.SEMICOLON, ";"),
+                Token(Tokens.EOF, ""),
             ],
         ),
     ],
