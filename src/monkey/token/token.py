@@ -47,9 +47,22 @@ class Tokens(TokenType, Enum):
     # // Keywords
     FUNCTION = "FUNCTION"
     LET = "LET"
+    TRUE = "TRUE"
+    FALSE = "FALSE"
+    IF = "IF"
+    ELSE = "ELSE"
+    RETURN = "RETURN"
 
 
-KEYWORDS = {"fn": Tokens.FUNCTION, "let": Tokens.LET}
+KEYWORDS = {
+    "fn": Tokens.FUNCTION,
+    "let": Tokens.LET,
+    "true": Tokens.TRUE,
+    "false": Tokens.FALSE,
+    "if": Tokens.IF,
+    "else": Tokens.ELSE,
+    "return": Tokens.RETURN,
+}
 
 
 def lookup_ident(ident: str) -> TokenType:
