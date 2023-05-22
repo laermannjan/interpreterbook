@@ -1,19 +1,16 @@
+[build-system]
+requires = ["pdm-pep517>=1.0.0"]
+build-backend = "pdm.pep517.api"
 
 [project]
-name = ""
-version = ""
-description = ""
-authors = [
-    {name = "Jan Laermann", email = "laermannjan@gmail.com"},
-]
+name = "monkey"
+version = "0.1.0"
+description = "Interpreter of the Monkey language"
+authors = [{ name = "Jan Laermann", email = "laermannjan@gmail.com" }]
 dependencies = []
 requires-python = ">=3.11"
-license = {text = "MIT"}
+license = { text = "MIT" }
+
 
 [tool.pdm.dev-dependencies]
-dev = [
-    "pytest>=7.3.1",
-    "black>=23.3.0",
-    "ruff>=0.0.269",
-    "mypy>=1.3.0",
-]
+dev = ["pytest>=7.3.1", "black>=23.3.0", "ruff>=0.0.269", "mypy>=1.3.0"]
