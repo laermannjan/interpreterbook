@@ -3,6 +3,16 @@ from monkey.token import TokenType, Token
 from monkey.lexer import Lexer
 
 
+def test_int():
+    input = "5"
+    lexer = Lexer(input)
+    tok = lexer.next_token()
+    assert (
+        tok.token_type == TokenType.INT
+    ), f"Token type wrong. expected={TokenType.INT}, got={tok}"
+    assert tok.literal == "5", f"Token literal wrong. expected={5}, got={tok}"
+
+
 def test_next_token():
     input = """let five = 5;
 let ten = 10;
