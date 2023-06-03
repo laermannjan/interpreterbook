@@ -5,7 +5,7 @@ repos:
       - id: black
 
   - repo: https://github.com/charliermarsh/ruff-pre-commit
-    rev: 'v0.0.263'
+    rev: "v0.0.263"
     hooks:
       - id: ruff
         args: [--fix]
@@ -14,10 +14,9 @@ repos:
     rev: v1.2.0
     hooks:
       - id: mypy
-        args: [src]
-        pass_filenames: false
         additional_dependencies:
           - pytest
+
   - repo: local
     hooks:
       - id: pytest
@@ -26,4 +25,4 @@ repos:
         language: system
         pass_filenames: false
         always_run: true
-        stages: [ "push" ]
+        stages: ["push"]
